@@ -1,14 +1,49 @@
 🌐 [Português (BR)](README.pt_BR.md) | [Español](README.es.md)
 
-# Soc Ops
+# 🎯 Soc Ops — Social Bingo for Real-World Conversations
 
-Social Bingo game for in-person mixers. Find people who match the questions and get 5 in a row!
+> Break the ice, meet new people, and turn mixers into a game.
 
-🎮 **[Play the Game](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/)** • 📚 **[View Lab Guide](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/docs/)**
+**Soc Ops** is a Blazor WebAssembly social bingo app built for in-person events, workshops, conferences, and team gatherings. Players look for people who match each square, mark the board as they mingle, and race to land 5 in a row.
+
+🎮 **[Play the Game](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/)**  
+📚 **[Open the Lab Guide](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/docs/)**
 
 ---
 
-## 📚 Lab Guide
+## Why this project is fun
+
+- 🧊 **Instant icebreaker** — gives people an easy reason to start a conversation
+- 🎲 **Fresh every round** — randomized boards keep each game different
+- 💾 **Resume anytime** — game state is saved locally in the browser
+- 🏆 **Built-in win detection** — rows, columns, and diagonals are checked automatically
+- 📱 **Event-ready UI** — designed to feel quick and simple on phones
+- 🤖 **Copilot workshop sample** — a real app used to teach multi-agent workflows
+
+## Quick start
+
+### Prerequisites
+
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) or higher
+
+### Run locally
+
+```bash
+cd SocOps
+dotnet run
+```
+
+Then open `http://localhost:5166`.
+
+### Build
+
+```bash
+dotnet build SocOps/SocOps.csproj
+```
+
+## Workshop path
+
+This repository is also a hands-on GitHub Copilot workshop. If you want to explore the app while learning agent workflows, jump into the guide:
 
 | Part | Title |
 |------|-------|
@@ -18,39 +53,36 @@ Social Bingo game for in-person mixers. Find people who match the questions and 
 | [**03**](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/docs/step.html?step=03-quiz-master) | Custom Quiz Master |
 | [**04**](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/docs/step.html?step=04-multi-agent) | Multi-Agent Development |
 
-> 📝 Lab guides are also available in the [`workshop/`](workshop/) folder for offline reading.
+> 📝 Prefer local reading? The same content is available in [`workshop/`](workshop/).
 
----
+## Customize it for your event
 
-## Prerequisites
+A simple way to make Soc Ops your own is to update the question bank in [`SocOps/Data/Questions.cs`](SocOps/Data/Questions.cs). Swap in prompts for your meetup, onboarding session, classroom, or conference and you instantly get a new game experience.
 
-- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) or higher
+## Project at a glance
 
-## Open in GitHub Codespaces (optional)
-
-After creating your own repo from this template:
-
-1. Open your repo on GitHub
-2. Click **Code** → **Codespaces** → **Create codespace on main**
-3. Wait for the devcontainer to finish setup
-4. From the repository root, run:
-   ```bash
-   cd SocOps
-   dotnet run
-   ```
-
-## Run
-
-```bash
-cd SocOps
-dotnet run
+```text
+SocOps/
+├── Components/   # Bingo board, squares, modal, game screens
+├── Models/       # Game state and domain models
+├── Services/     # State management and bingo logic
+├── Data/         # Question bank
+├── Pages/        # Routable pages
+└── wwwroot/      # Static assets and CSS utilities
 ```
 
-## Build
+## Tech stack
 
-```bash
-cd SocOps
-dotnet build
-```
+- **Framework:** Blazor WebAssembly on .NET 10
+- **State:** Scoped services with localStorage persistence
+- **Styling:** Custom utility CSS
+- **Deployment:** GitHub Pages via GitHub Actions
 
-Deploys automatically to GitHub Pages on push to `main`.
+## More project info
+
+- [Contributing guide](CONTRIBUTING.md)
+- [Code of conduct](CODE_OF_CONDUCT.md)
+- [Security policy](SECURITY.md)
+- [Support](SUPPORT.md)
+
+Automatically deploys to GitHub Pages on push to `main`.
